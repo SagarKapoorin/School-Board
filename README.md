@@ -1,6 +1,6 @@
 # EduCrafter
 ## Access EduCrafter
-Explore EduCrafter live on the web: [EduCrafter Student Portal](https://school-board.onrender.com/login)  (Might Be slow)
+Explore EduCrafter live on the web: [School-Board](https://school-board.onrender.com/login)  (Might Be slow)
 
 Welcome to the School-Board repository! This project is a comprehensive web application designed to serve as a student portal with a variety of features to enhance your academic and leisure activities. Whether you need a place to take notes, play games, or check the weather, School-Board has got you covered.
 
