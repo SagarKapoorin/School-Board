@@ -1,10 +1,10 @@
-# EduCrafter
-## Access EduCrafter
-Explore EduCrafter live on the web: [EduCrafter Student Portal](https://educrafter.onrender.com/login)  (Might Be slow)
+# School-Board
+## Access School-Board
+Explore School-Board live on the web: [School-Board Student Portal](https://School-Board.onrender.com/login)  (Might Be slow)
 
-Welcome to the EduCrafter repository! This project is a comprehensive web application designed to serve as a student portal with a variety of features to enhance your academic and leisure activities. Whether you need a place to take notes, play games, or check the weather, EduCrafter has got you covered.
+Welcome to the School-Board repository! This project is a comprehensive web application designed to serve as a student portal with a variety of features to enhance your academic and leisure activities. Whether you need a place to take notes, play games, or check the weather, School-Board has got you covered.
 
-<img src="Home_Icon/EduCrafter.jpg" alt="EduCrafter Image" width="700"/>
+<img src="Home_Icon/School-Board.jpg" alt="School-Board Image" width="700"/>
 
 ## Features
 
@@ -80,7 +80,7 @@ Various npm packages and JavaScript libraries.
     ```
 5. Check the application on your local host.
 
-Feel free to explore the various features and functionalities of EduCrafter!
+Feel free to explore the various features and functionalities of School-Board!
 
 For any issues or suggestions, please reach out to us through the "Contact Us" page.
 
