@@ -1,8 +1,6 @@
 # EduCrafter
-## How To Use
-Check out this [Video](https://www.linkedin.com/feed/update/urn:li:activity:7163522277702127616/)
 ## Access EduCrafter
-Explore EduCrafter live on the web: [EduCrafter Student Portal](https://educrafter.onrender.com/login)  (Might Be Working Or Might Not)
+Explore EduCrafter live on the web: [EduCrafter Student Portal](https://educrafter.onrender.com/login)  (Might Be slow)
 
 Welcome to the EduCrafter repository! This project is a comprehensive web application designed to serve as a student portal with a variety of features to enhance your academic and leisure activities. Whether you need a place to take notes, play games, or check the weather, EduCrafter has got you covered.
 
