@@ -1,4 +1,7 @@
 # EduCrafter
+
+## Note: YOu need three things in env file: ATLAS_DB_URL(mongodb databse url) , SECRET (cookie-secret-key)  , WEATHER_API_KEY (for accessing weather api)
+
 ## Access EduCrafter
 Explore EduCrafter live on the web: [EduCrafter Student Portal](https://educrafter.onrender.com/login)  (Might Be slow)
 
