@@ -72,7 +72,11 @@ Various npm packages and JavaScript libraries.
     ```bash
     cd Student_portal
     ```
-4. Install dependencies and run the application using nodemon or node.
+4. Install dependencies
+   ```bash
+      npm install
+   ```
+    and run the application using nodemon or node.
     ```bash
     nodemon app.js
     # or
