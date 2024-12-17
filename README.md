@@ -66,11 +66,11 @@ Various npm packages and JavaScript libraries.
 1. Fork the repository.
 2. Clone the repository to your local environment.
     ```bash
-    git clone https://github.com/SagarKapoorin/Student_Portal.git
+    git clone https://github.com/SagarKapoorin/School-Board.git
     ```
 3. Change directory to the project folder.
     ```bash
-    cd Student_portal
+    cd School-Board
     ```
 4. Install dependencies
    ```bash
