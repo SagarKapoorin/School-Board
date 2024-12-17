@@ -1,0 +1,138 @@
+html,body{
+    background-color: transparent;
+    width:200px;
+    height:200px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.tabs {
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.tabs button {
+    background-color: transparent;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.tabs button:hover {
+    color: black;
+    background-color: #e9ecf3;
+}
+
+.tabs button:active {
+    background-color: #e9ecf3;
+}
+
+.tabs button.opened {
+    background-color: #e9ecf3;
+}
+
+.tabContent {
+    display: none;
+    border-top: none;
+}
+
+h1 {
+    color: white;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+}
+
+#countDownTimerContainer {
+    background-color: transparent;
+    height: 185px;
+    border-radius: 5px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+#cdt-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+input::placeholder{
+    color:white;
+}
+.cdt-input {
+    background-color: #7633e3;
+    color:white;
+    border: none;
+    font-size: 22px;
+    width: 30px;
+    height:30px;
+    margin: 10px;
+    text-align: center;
+}
+
+.timer-cdt {
+    justify-self: center;
+    align-self: center;
+    border: none;
+    background-color: #ffffff00;
+    font-size: 1 50px;
+    width: 75px;
+    height: 30px;
+}
+
+.semi {
+    font-size: 20px;
+}
+
+.btn,.btn-swc {
+    background-color: transparent;
+    margin: 0 6px;
+    height: 45px;
+    padding: 0 13px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 3px solid black;
+    transition: all 0.3s ease;
+}
+
+.btn:hover,.btn-swc:hover {
+    background-color: black;
+    cursor: pointer;
+    color:white;
+}
+
+
+#stopWatchContainer {
+    background-color: transparent;
+    border-radius: 5px;
+    height:145px;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+#show-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 34px;
+    margin: 15px;
+}

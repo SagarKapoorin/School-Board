@@ -1,0 +1,208 @@
+<% layout('Layout/boilerplate.ejs') -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/Profile.css">
+</head>
+<body>
+    <div class="Profile">
+        <h1 class="headingss">Personal Information</h1>
+        <div class="Personal_info">
+            <div class="img"><img src="src/Profile_c.svg" class="Profile_img"></div>
+            <div class="info">
+                <span class="red box"></span>
+                <span class="yellow box"></span>
+                <span class="green box"></span>
+                <h3><i class="ri-user-line"></i> &nbsp; Username: <%= data[0].username %></h3>
+                <h3><i class="ri-mail-line"></i> &nbsp; Email: <%= data[0].email %></h3>
+                <h3><i class="ri-calendar-2-line"></i> &nbsp; Date Created: <%= data[0].date.toLocaleDateString() %></h3>
+            </div>
+        </div>
+
+        <h1 class="headingss">Quiz Data</h1>
+        <% let maxScore=-1 %>
+        <% let TotalQuestions=0 %>
+        <% let Totalright=0 %>
+        <div class="Quiz_data">
+            <div class="All_Quizes">
+            <% if (data[0].Quize.length > 0) { %>
+                <% for (let i = 0; i < Math.min(data[0].Quize.length,2); i++) { %>
+                    <div class="Quiz_card">
+                    <ul>
+                        <li><h3>Quiz no. <%= i %> </h3></li>
+                        <li>Attempted : <%= data[0].Quize[i].Total_question %></li>
+                        <li>Correct : <%= data[0].Quize[i].Correct %></li>
+                        <li>Score : <%=data[0].Quize[i].Correct/data[0].Quize[i].Total_question %></li>
+                        <% maxScore=(Math.max(data[0].Quize[i].Correct/data[0].Quize[i].Total_question,maxScore)) %>
+                        <% TotalQuestions+= data[0].Quize[i].Total_question %>
+                        <% Totalright+= data[0].Quize[i].Correct %>
+                        <br>
+                    </ul>
+                </div>
+                <% } %>
+                <button class="See_all"><a href="/Quizshow">See all <i class="ri-arrow-right-line"></i> </a></button>
+                <% if (data[0].Quize.length > 0) { %>
+                    <img src="src/Profile_e.svg" class="Image_Notes">
+                    <% } %>
+            <% } else { %>
+                <p>No Quiz found.</p>
+                <img src="src/Profile_a.svg" class="Image_notfound">
+            <% } %>
+        </div>
+            <div class="Quiz_stats">
+            <div class="text_stats">
+                <span class="red box"></span>
+                <span class="yellow box"></span>
+                <span class="green box"></span>
+            <p>Maximum Score : <%= maxScore==-1?0:maxScore %></p>
+            <p>Overall Score : <%= isNaN(Totalright/TotalQuestions)?0:Totalright/TotalQuestions %></p>
+            <p>Question Attempted : <%= TotalQuestions %></p>
+            <p>Right Anwers : <%= Totalright %> </p>
+            <p>Number of Quizes : <%= data[0].Quize.length %> </p>
+            </div>
+            <% if (data[0].Quize.length > 0) { %>
+            <div class="charts">
+                <canvas id="myChart" width="200" height="200"></canvas>
+                <canvas id="myPieChart" width="200" height="200"></canvas>
+            </div>
+                <% }else{ %>
+                    <div class="NO_Charts">
+                        <img src="src/Profile_b.svg" class="No_charts">
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+        <h1 class="Notes_heading headingss">Notes Data</h1>
+        <div class="Notes_data">
+            <% let totalNote=0 %>
+            <div class="All_Quizes">
+                <% if (data[0].Notes.length > 0) { %>
+                    <% for (let i = 0; i < Math.min(data[0].Notes.length, 2); i++) { %>
+                        <div class="Notes_card">
+                            <ul>
+                                <li>Date: <%= data[0].Notes[i].date.toLocaleDateString() %></li>
+                                <li>Subject: <%= data[0].Notes[i].Subject.length > 11 ? data[0].Notes[i].Subject.substring(0, 5) + "...." : data[0].Notes[i].Subject %></li>
+                                <% if(data[0].Notes[i].content.length>11){ %>
+                                    <li>Content: <%= data[0].Notes[i].content.substring(0, 11) + "...." %></li>
+                               <% }else{ %>
+                                    <li>Content: <%= data[0].Notes[i].content %></li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    <% } %>
+                    <button class="See_all"><a href="/Note">See all <i class="ri-arrow-right-line"></i> </a></button>
+                    <% if (data[0].Notes.length > 0) { %>
+                        <img src="src/Profile_d.svg" class="Image_Notes">
+                    <% } %>
+                <% } else { %>
+                    <p>No Note found.</p>
+                    <img src="src/Profile_a.svg" class="Image_notfound">
+                <% } %>
+            </div>
+            <p class="N">Total Notes : <%= data[0].Notes.length %></p>
+            </div>
+            <h1 class="headingss">Game Data</h1>
+            <% let snakescore=0; %>
+            <% let snake_games=0; %>
+            <% let rock_games=0; %>
+            <% let rockscore=0; %>
+            <div class="Game_data">
+                <div class="All_Quizes">
+                    <% if (data[0].Games.length > 0) { %>
+                        <% for (let i = 0; i < data[0].Games.length; i++) { %>
+                                <% if(data[0].Games[i].genre=="snake"){ %>
+                                    <% snakescore=Math.max(data[0].Games[i].score,snakescore) %>
+                                    <% snake_games++ %>
+                                <% }else{ %>
+                                    <% rockscore=Math.max(data[0].Games[i].score,rockscore) %>
+                                    <% rock_games++ %>
+                                <% } %>
+                            <% } %>
+                            <div class="Game_card">
+                            <ul>
+                                <li> Genre: Snake Game</li>
+                                <li> Heighest-Score: <%- snakescore %></li>
+                                <li> Games: <%- snake_games %></li>
+                                <br>
+                            </ul>
+                            </div>
+                            <div class="Game_card">
+                            <ul>
+                                <li> Genre: Rock-Paper-Scissor Game</li>
+                                <li> Heighest-Score: <%- rockscore %></li>
+                                <li> Games: <%- rock_games %></li>
+                                <br>
+                            </ul>
+                        </div>
+                    <% } else { %>
+                        <p>No Game found.</p>
+                        <img src="src/Profile_a.svg" class="Image_notfound">
+                    <% } %>
+                    <% if (data[0].Games.length > 0) { %>
+                    <img src="src/Profile_f.svg" class="Image_Notes">
+                    </div>
+                    <% } %>
+                </div>
+                <p class="N">Total Games : <%= data[0].Games.length %></p>
+                </div>
+            <div class="delete">
+               <form method="post" action="/Profile/<%=data[0]._id %>?_method=DELETE">
+                <button type="submit" class="Delete_button">Delete My Profile</button>
+                <p class="Cautions"><span>*Cautions</span>:Just By Clicking this Delete Button Your Profile is Deleted Permenantly</p>
+               </form>
+               <form method="get" action="/<%=data[0]._id %>">
+                <button class="P">Edit Information</button>
+               </form>
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const m='<%=maxScore %>'
+        const a='<%= isNaN(Totalright/TotalQuestions)?0:Totalright/TotalQuestions %>'
+        console.log(m+" "+a)
+        const data = {
+    labels: ['Highest Score', 'Average Score'],
+    datasets: [{
+      label: 'Scores',
+      data: [ m, a,1],
+      backgroundColor: 'rgba(75, 192, 192, 0.8)',
+      borderColor: 'rgba(75, 192, 192, 1)', 
+      borderWidth: 1 
+    }]
+  };
+  
+  const config = {
+    type: 'bar', 
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+  const myChart = new Chart(document.getElementById('myChart'), config);
+  const to= '<%- TotalQuestions %>'
+    const ri= '<%- Totalright %>'
+    const wr='<%-TotalQuestions-Totalright %>'
+const data2 = {
+  labels: ['Total Questions', 'Correct', 'Incorrect'],
+  datasets: [{
+    data: [to,ri, wr],
+    backgroundColor: ['red', 'green', 'blue'], 
+    borderWidth: 1 
+  }]
+};
+
+const config2 = {
+  type: 'pie', 
+  data: data2,
+};
+
+const myPieChart = new Chart(document.getElementById('myPieChart'), config2);
+
+    </script>
+</body>

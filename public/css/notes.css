@@ -1,0 +1,119 @@
+/*----------------------------------------------- importing text--------------------------------------------  */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300;1,400&display=swap');
+/* --------------------------------------------------------------------------------------------------- */
+
+/* --------------------------Basic Styling-------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+/* --------------Main------------------ */
+.Main{
+    flex-wrap: wrap;
+}
+/* not want box to show on typing */
+[contenteditable="true"]:focus {
+    outline: none;
+  }
+body, html{
+    margin:0px;
+    position: relative;
+    overflow: none;
+}
+button{
+    margin-left: 0.6rem;
+}
+/* -------------------------title and description------------ */
+.title,.description{
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.title p{
+    font-weight: 600; 
+    padding-top: 0.2rem;
+    padding-left: 1rem;
+    border: none;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+.Format_buttons{
+    display: flex;
+    gap:5rem;
+    position: fixed;
+    top:285px;
+}
+.subject{
+    margin-right: 0.1rem;
+}
+.description p{
+    font-size: 0.8rem;
+    overflow: hidden;
+}
+.error{
+    font-size: 0.8rem;
+    display: block;
+    position: absolute;
+    top:240px;
+    left:145px;
+    font-weight: 900;
+    color:red;
+    display:none;
+}
+/*  ----------hr-----------*/
+hr{
+    width: 90%;
+    margin:0 auto;
+}
+/* ----button---------- */
+/* motive is to make a before that passes behind button text */
+.Bold{
+    position: relative;
+}
+.italic_text{
+    position: relative;
+
+}
+button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    /* needed so that before will go through back not front */
+    background: #e8e8e8;
+    font-weight: 1000;
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   /* creating before that passes behind button */
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* keeping width 0 until active */
+    width: 0;
+    border-radius: 15px;
+    background-color: #292267;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   button:hover {
+    color: #e8e8e8;
+   }
+   
+   button:hover::before {
+    width: 100%;
+   }
+   .Save{
+    position: fixed;
+    top:285px;
+    left:90px;
+   }
